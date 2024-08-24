@@ -12,5 +12,5 @@ Student Info
 
 * Name: Le Anh Quang
 * ID: 22BI13380
-* Group ID: *Your Group ID here*
+* Group ID: 7
 * Project Name: *Your Project Name here*
