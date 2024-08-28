@@ -21,9 +21,11 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -31,10 +33,12 @@ import androidx.fragment.app.Fragment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.UserHandle;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -45,12 +49,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+import kotlin.io.LineReader;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ForecastFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class ForecastFragment extends Fragment {
+    private static final String TAG = "FRAGMENT";
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -80,6 +87,7 @@ public class ForecastFragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+
     }
 
     @Override
@@ -89,17 +97,28 @@ public class ForecastFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = new View(getContext());
-        //inflater.inflate(R.layout.fragment_forecast, container, false);
 
-        view.setBackgroundColor(Color.RED);
-        return view;
+        TextView text = new TextView(getContext());
+        text.setText("THURSDAY");
+
+        ImageView imageView = new ImageView(getContext());
+        imageView.setImageResource(R.drawable.weather_logo);
+
+        LinearLayout linearLayout = new LinearLayout(this.getContext());
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
+        linearLayout.setBackgroundColor(Color.GRAY);
+        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT)
+        );
+        linearLayout.addView(text);
+        linearLayout.addView(imageView);
+
+        return linearLayout; //inflater.inflate(R.layout.fragment_forecast, container, false);
     }
 }
