@@ -14,6 +14,7 @@ import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.credentials.ClearCredentialStateException;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -21,6 +22,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
+import android.graphics.fonts.FontStyle;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
@@ -49,7 +51,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import kotlin.io.LineReader;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -103,22 +104,6 @@ public class ForecastFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        TextView text = new TextView(getContext());
-        text.setText("THURSDAY");
-
-        ImageView imageView = new ImageView(getContext());
-        imageView.setImageResource(R.drawable.weather_logo);
-
-        LinearLayout linearLayout = new LinearLayout(this.getContext());
-        linearLayout.setOrientation(LinearLayout.VERTICAL);
-        linearLayout.setBackgroundColor(Color.GRAY);
-        linearLayout.setLayoutParams(new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT)
-        );
-        linearLayout.addView(text);
-        linearLayout.addView(imageView);
-
-        return linearLayout; //inflater.inflate(R.layout.fragment_forecast, container, false);
+        return inflater.inflate(R.layout.fragment_forecast, container, false);
     }
 }
