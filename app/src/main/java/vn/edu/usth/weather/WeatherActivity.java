@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class WeatherActivity extends AppCompatActivity {
     private static final String TAG = "Weather";
@@ -24,11 +26,10 @@ public class WeatherActivity extends AppCompatActivity {
             return insets;
         });
 
-//        ForecastFragment firstFragment = new ForecastFragment();
-//        WeatherFragment weatherFragment = new WeatherFragment();
-//
-//        getSupportFragmentManager().beginTransaction().add(R.id.main, firstFragment).commit();
-//        getSupportFragmentManager().beginTransaction().add(R.id.main, weatherFragment).commit();
+        PagerAdapter adapter = new HomeFragmentPagerAdapter(getSupportFragmentManager());
+        ViewPager pager = (ViewPager) findViewById(R.id.paper);
+        pager.setOffscreenPageLimit(3);
+        pager.setAdapter(adapter);
 
         Log.i(TAG, "On Create");
     };
