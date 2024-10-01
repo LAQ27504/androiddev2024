@@ -12,7 +12,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#e0dcfc"
+        android:background="@color/purplecheck"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text="@string/weather" />
 
             <ImageView
                 android:id="@+id/imageView1"
@@ -45,7 +45,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text= "@string/descriptiom" />
         </LinearLayout>
 
         <LinearLayout
@@ -61,7 +61,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text= "@string/weather" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -79,7 +79,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text= "@string/descriptiom" />
         </LinearLayout>
 
         <LinearLayout
@@ -95,7 +95,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text="@string/weather" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -113,7 +113,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text= "@string/descriptiom" />
         </LinearLayout>
 
         <LinearLayout
@@ -129,7 +129,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text="@string/weather" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -147,7 +147,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text= "@string/descriptiom" />
         </LinearLayout>
 
         <LinearLayout
@@ -163,7 +163,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text="@string/weather" />
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -181,7 +181,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text= "@string/descriptiom" />
         </LinearLayout>
 
         <LinearLayout
@@ -197,7 +197,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text="@string/weather" />
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -215,7 +215,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text="@string/descriptiom" />
         </LinearLayout>
 
         <LinearLayout
@@ -231,7 +231,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text="@string/weather" />
 
             <ImageView
                 android:id="@+id/imageView7"
@@ -249,7 +249,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="The Best Day" />
+                android:text= "@string/descriptiom" />
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

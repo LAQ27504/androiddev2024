@@ -1,10 +1,10 @@
 <resources>
     <string name="app_name">USTH Weather</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="Temperature">20 C &#10; Cloudy</string>
-    <string name="destination">Paris</string>
+    <string name="Temperature">20 C &#10; Maay</string>
+    <string name="destination">Thanh Pho Phap</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="descriptiom">that is the best day</string>
-    <string name="weather">Today is the day</string>
+    <string name="descriptiom">hehehee</string>
+    <string name="weather">Hôm nay</string>
 </resources>
