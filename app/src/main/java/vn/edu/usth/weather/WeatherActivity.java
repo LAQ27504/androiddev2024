@@ -2,6 +2,9 @@ package vn.edu.usth.weather;
 
 import android.nfc.Tag;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,6 +27,7 @@ import java.io.InputStream;
 public class WeatherActivity extends AppCompatActivity {
     private static final String TAG = "Weather";
 
+    private RefreshHandler refreshHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +50,16 @@ public class WeatherActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
 
+        final Handler handler = new Handler(Looper.getMainLooper()) {
+            @Override
+            public void handleMessage(Message msg) {
+
+                String content = msg.getData().getString("server_response");
+                Toast.makeText(WeatherActivity.this, content, Toast.LENGTH_SHORT).show();
+            }
+        };
+
+        refreshHandler = new RefreshHandler(handler);
         Log.i(TAG, "On Create");
     };
 
@@ -59,10 +73,13 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.refresh){
-            Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Refresh", Toast.LENGTH_SHORT).show();
+            refreshHandler.NetworkRequestHandler();
             return true;
         }
         else if (id == R.id.setting){
+            PrefActivity prefActivity = new PrefActivity();
+            Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
             return true;
         }
         else{
