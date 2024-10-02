@@ -7,4 +7,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="descriptiom">hehehee</string>
     <string name="weather">Hôm nay</string>
+    <string name="refresh">Khởi động lại</string>
+    <string name="setting">Cài đặt</string>
 </resources>
