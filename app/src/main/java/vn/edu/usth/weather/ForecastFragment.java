@@ -24,6 +24,7 @@ import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import android.graphics.fonts.FontStyle;
 import android.media.Image;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -102,6 +103,7 @@ public class ForecastFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        this.getVideoInputStream();
 
 
     }
@@ -109,8 +111,13 @@ public class ForecastFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         return inflater.inflate(R.layout.fragment_forecast, container, false);
     }
 
+    private void getVideoInputStream(){
+        //InputStream is = getContext().getResources().openRawResource(R.raw.music);
+        MediaPlayer mediaPlayer = MediaPlayer.create(getContext(), R.raw.music);
+
+        mediaPlayer.start();
+    }
 }

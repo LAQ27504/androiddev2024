@@ -14,6 +14,8 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.io.InputStream;
+
 public class WeatherActivity extends AppCompatActivity {
     private static final String TAG = "Weather";
 
@@ -68,4 +70,5 @@ public class WeatherActivity extends AppCompatActivity {
         super.onDestroy();
         Log.i(TAG, "On Destroy");
     }
+
 }
